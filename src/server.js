@@ -1,9 +1,14 @@
 //Require Module Variables
+const path = require('path'); //Reference to Node's Path Module
 const express = require('express');
 const config = require('./config');
 
 //Application Object
 const app = express();
+
+//This is the path Express.static() will search for path resolutions
+const publicPath = path.resolve(__dirname, '../public');
+app.use(express.static(publicPath));
 
 //Test Code with a Route
 app.use('/doc', function(req, res, next) {
