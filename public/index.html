@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>AnimalDex Project</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
+
   <body>
+    
+    <nav></nav>
+    
     <div class="container">
+      
       <h1>AnimalDex</h1>
       <h2>Can you see them all?</h2>
-    </div>
 
+      <div id="list-container"></div>
+
+    </div>
+    
+    <footer></footer>
+
+    <script src="/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Test Script -->
+    <script>
+      $(document).ready(function() {
+        const data = { name: "Code Louisvillains" }
+        const html = `Hello ${data.name}! I am a template!`;
+    
+        $('body h2').first().after(html);
+      });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+          const data = [
+            {name: 'Buffy', value: 'Slayer, guidance counselor'},
+            {name: 'Willow', value: 'Witch'},
+            {name: 'Xander', value: 'Dude, construction worker'},
+            {name: 'Giles', value: 'Watcher, Librarian'},
+          ];
+      
+          const listHtml = data.map(line => `
+            <div class="row">
+              <div class="col-xs-6"><strong>${name}</strong></div>
+              <div class="col-xs-6">${value}</div>
+            </div>`).join('\n');
+      
+          $('#list-container').html(listHtml);
+        });
+      
+      </script>
   </body>
 </html>
