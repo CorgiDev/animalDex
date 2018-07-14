@@ -61,8 +61,36 @@ function refreshAnimalList() {
 }
 
 //Submit Animal Form
-function submitFileForm() {
+function submitAnimalForm() {
     console.log("You clicked 'submit'. Congratulations.");
+
+    const animalData = {
+        animalname: $('#animal-name').val(),
+        weight: $('#animal-weight').val(),
+        height: $('#animal-height').val(),
+        length: $('#animal-length').val(),
+        class: $('#animal-class').val(),
+        scientificname: $('#animal-scientific-name').val(),
+        description: $('#animal-description').val(),
+      };
+     
+    console.log("Your animal data", animalData);
+
+    fetch('/api/animal', {
+        method: 'post',
+        body: JSON.stringify(animalData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+        .then(animal => {
+          console.log("We have posted the data", animal);
+          refreshAnimalList();
+        })
+        .catch(err => {
+          console.error("Well, crud! Things didn't go quite right.", err);
+        }) 
 }
   
 //Cancel Animal Form

@@ -17,10 +17,25 @@ const ANIMALS = [
  * C - Create an animal entry      *
  ***********************************/
 router.post('/animal', function(req, res, next) {
-    const data = req.body;
-    console.log("POST DATA", data);
+    const Animal = mongoose.model('Animal');
+    const AnimalData = {
+        animalname: req.body.animalname,
+        weight: req.body.weight,
+        height: req.body.height,
+        length: req.body.length,
+        class: req.body.class,
+        scientificname: req.body.scientificname,
+        description: req.body.description,
+    };
 
-    res.end('Create a new animal');
+    Animal.create(animalData, function(err, animalFile) {
+        if (err) {
+        console.error(err);
+        return res.status(500).json(err);
+        }
+
+        res.json(newAnimal);
+    });
 });
 /***********************************
  * R - Read a single animal entry  *
