@@ -15,6 +15,9 @@ const ANIMALS = [
  * C - Create an animal entry      *
  ***********************************/
 router.post('/animal', function(req, res, next) {
+    const data = req.body;
+    console.log("POST DATA", data);
+
     res.end('Create a new animal');
 });
 /***********************************
@@ -34,6 +37,9 @@ router.get('/animal/:animalId', function(req, res, next) {
  * U - Update an animal entry      *
  ***********************************/
 router.put('/animal/:animalId', function(req, res, next) {
+    const data = req.body;
+    console.log("PUT DATA", data);
+
     res.end(`Updating animal '${req.params.animalId}'`);
 });
 /***********************************
