@@ -1,3 +1,5 @@
+//Required routes and modules
+const mongoose = require('mongoose');
 const router = require('express').Router();
 
 router.use('/doc', function(req, res, next) {
@@ -52,7 +54,14 @@ router.delete('/animal/:animalId', function(req, res, next) {
  * List all animal entries         *
  ***********************************/
 router.get('/animal', function(req, res, next) {
-    res.json(ANIMALS);
+    mongoose.model('Animal').find({}, function(err, animals) {
+        if (err) {
+          console.log(err);
+          return res.status(500).json(err);
+        }
+      
+        res.json(animals);
+    });
 });
 
   module.exports = router;

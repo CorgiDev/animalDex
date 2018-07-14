@@ -4,6 +4,13 @@ const path = require('path'); //Reference to Node's Path Module
 const express = require('express');
 const config = require('./config');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// Connect to MongoDB and create/use database as configured
+mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.dbName}`);
+
+// Import all models
+require('./models/animal.model.js'); //Does that need to be file.model.js? or is animal.js okay?
 
 //Application Object
 const app = express();

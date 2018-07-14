@@ -1,0 +1,47 @@
+[
+    {
+      "animalname": "African Lion",
+      "weight": "600 lbs",
+      "height": "46.8 in",
+      "length": "111.6 in",
+      "class": "Mammalia",
+      "scientificname": "Panthera leo",
+      "description": "A large feline predator, most well known for the large mane of the males."
+    },
+    {
+        "animalname": "Cheetah",
+        "weight": "159 lb",
+        "height": "35 in",
+        "length": "none recorded",
+        "class": "Mammalia",
+        "scientificname": "Acinonyx jubatus",
+        "description": "A medium size feline predator, known for its fast speed."
+    },
+    {
+        "animalname": "Laughing Kookaburra",
+        "weight": "1 lb",
+        "height": "none recorded",
+        "length": "17 in",
+        "class": "Aves",
+        "scientificname": "Dacelo novaeguineae",
+        "description": "A unique, Austrailian bird, most well known for its laugh like call."
+    },
+    {
+        "animalname": "Whale Shark",
+        "weight": "20,000 lb",
+        "height": "none recorded",
+        "length": "384 in",
+        "class": "Chondricthyes",
+        "scientificname": "Rhincodon typus",
+        "description": "A peaceful, large shark that people love to swim near."
+    },
+    {
+        "animalname": "",
+        "weight": "",
+        "height": "",
+        "length": "",
+        "class": "",
+        "scientificname": "",
+        "description": ""
+    },
+  ]
