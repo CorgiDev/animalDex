@@ -26,11 +26,6 @@ app.use(bodyParser.json());
 app.use(express.static(publicPath));
 app.use('/api', router);
 
-//Test Code
-app.use(function(req, res, next) {
-    res.end("Hello World!");
-});
-
 //Commandline msg notifying of app successful start
 app.listen(config.port, function() {
     console.log(`${config.appName} is accessible by navigating to 127.0.0.1:${config.port}`);
