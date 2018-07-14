@@ -3,6 +3,7 @@ const router = require('./routes'); //Routes reference
 const path = require('path'); //Reference to Node's Path Module
 const express = require('express');
 const config = require('./config');
+const bodyParser = require('body-parser');
 
 //Application Object
 const app = express();
@@ -10,6 +11,19 @@ const app = express();
 //This is the path Express.static() will search for path resolutions
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
+
+//Tells app to use Body Parser
+app.use(function(req, res, next) {
+    console.log("req.body BEFORE parsing", req.body);
+    next();
+  })
+  
+  app.use(bodyParser.json());
+  
+  app.use(function(req, res, next) {
+    console.log("req.body AFTER parsing", req.body);
+    next();
+  })
 
 //Causes the app to use the router
 app.use(express.static(publicPath));
