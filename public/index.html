@@ -40,20 +40,20 @@
 
     <script>
         $(document).ready(function() {
-          const data = [
+          const lines = [
             {name: 'Buffy', value: 'Slayer, guidance counselor'},
             {name: 'Willow', value: 'Witch'},
             {name: 'Xander', value: 'Dude, construction worker'},
             {name: 'Giles', value: 'Watcher, Librarian'},
           ];
       
-          const listHtml = data.map(line => `
-            <div class="row">
-              <div class="col-xs-6"><strong>${name}</strong></div>
-              <div class="col-xs-6">${value}</div>
+          const listHtml = lines.map(line =>
+            `<div class="row">
+              <div class="col-xs-6"><strong>${line.name}</strong></div>
+              <div class="col-xs-6">${line.value}</div>
             </div>`).join('\n');
       
-          $('#list-container').html(listHtml);
+          $("#list-container").html(listHtml);
         });
       
       </script>
