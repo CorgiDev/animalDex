@@ -49,7 +49,16 @@ function submitAnimalForm() {
         description: $('#animal-description').val(),
       };
 
-    fetch('/api/animal', {
+      let method, url;
+      if (animalData._id) {
+        method = 'PUT';
+        url = '/api/animal/' + animalData._id;
+      } else {
+        method = 'POST';
+        url = '/api/animal';
+      }
+
+      fetch('url', {
         method: 'post',
         body: JSON.stringify(animalData),
         headers: {
@@ -62,7 +71,7 @@ function submitAnimalForm() {
           refreshAnimalList();
         })
         .catch(err => {
-          console.error("Well, crud! Things didn't go quite right.", err);
+          console.error("Well, crud! Things did not go quite right.", err);
         }) 
 }
   
