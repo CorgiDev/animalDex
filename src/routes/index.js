@@ -1,11 +1,12 @@
 //Required routes and modules
-const mongoose = require('mongoose');
 const router = require('express').Router();
+const mongoose = require('mongoose');
 
-router.use('/doc', function(req, res, next) {
-    res.end(`Documentation http://expressjs.com/`);
-  });
-  
+// router.use('/doc', function(req, res, next) {
+//     res.end(`Documentation http://expressjs.com/`);
+//   });
+
+//Fake DATA ignore!
 const ANIMALS = [
     {id: 'a', animalname: 'African Lion', weight: '600 lb', height: '46.8 in', length: '111.6 in', class: 'Mammalia', scientificname: 'Panthera leo', description: 'A large feline predator, most well known for the large mane of the males.'},
     {id: 'b', animalname: 'Cheetah', weight: '159 lb', height: '35 in', length: 'none recorded', class: 'Mammalia', scientificname: 'Acinonyx jubatus', description: 'A medium size feline predator, known for its fast speed.'},
@@ -28,7 +29,7 @@ router.post('/animal', function(req, res, next) {
         description: req.body.description,
     };
 
-    Animal.create(animalData, function(err, animalFile) {
+    Animal.create(animalData, function(err, newAnimal) {
         if (err) {
         console.error(err);
         return res.status(500).json(err);
@@ -37,6 +38,7 @@ router.post('/animal', function(req, res, next) {
         res.json(newAnimal);
     });
 });
+
 /***********************************
  * R - Read a single animal entry  *
  ***********************************/

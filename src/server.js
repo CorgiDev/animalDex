@@ -1,4 +1,4 @@
-//Require Module Variables
+//Require Module and Package Variables
 const router = require('./routes'); //Routes reference
 const path = require('path'); //Reference to Node's Path Module
 const express = require('express');
@@ -20,17 +20,7 @@ const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
 //Tells app to use Body Parser
-app.use(function(req, res, next) {
-    console.log("req.body BEFORE parsing", req.body);
-    next();
-  })
-  
-  app.use(bodyParser.json());
-  
-  app.use(function(req, res, next) {
-    console.log("req.body AFTER parsing", req.body);
-    next();
-  })
+app.use(bodyParser.json());
 
 //Causes the app to use the router
 app.use(express.static(publicPath));
@@ -41,6 +31,7 @@ app.use(function(req, res, next) {
     res.end("Hello World!");
 });
 
+//Commandline msg notifying of app successful start
 app.listen(config.port, function() {
     console.log(`${config.appName} is accessible by navigating to 127.0.0.1:${config.port}`);
 });

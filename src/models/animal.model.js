@@ -15,9 +15,6 @@ const AnimalSchema = new mongoose.Schema({
 //Turns the model into a Mongoose model
 const Animal = mongoose.model("Animal", AnimalSchema); 
 
-//Exports the Mongoose model
-module.exports = Animal;
-
 //Get current count of documents in the collection
 Animal.count({}, function(err, count) {
     if (err) {
@@ -33,3 +30,6 @@ Animal.count({}, function(err, count) {
     console.log("DB seeded")
     });
 });
+
+//Exports the Mongoose model
+module.exports = Animal;
