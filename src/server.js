@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.dbName}`);
 
 // Import all models
-require('./models/animal.model.js'); //Does that need to be file.model.js? or is animal.js okay?
+require('./models/animal.model.js');
 
 //Application Object
 const app = express();

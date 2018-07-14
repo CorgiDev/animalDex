@@ -59,3 +59,13 @@ function refreshAnimalList() {
       $('#list-container').html(html);
     });
 }
+
+//Submit Animal Form
+function submitFileForm() {
+    console.log("You clicked 'submit'. Congratulations.");
+}
+  
+//Cancel Animal Form
+function cancelFileForm() {
+    console.log("Someone should clear the form");
+}
