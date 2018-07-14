@@ -34,14 +34,5 @@
         "class": "Chondricthyes",
         "scientificname": "Rhincodon typus",
         "description": "A peaceful, large shark that people love to swim near."
-    },
-    {
-        "animalname": "",
-        "weight": "",
-        "height": "",
-        "length": "",
-        "class": "",
-        "scientificname": "",
-        "description": ""
-    },
+    }
   ]
