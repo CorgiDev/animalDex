@@ -19,7 +19,7 @@ function renderAnimals(animals) {
     <li class="list-group-item">
       <span><strong>${animal.aniname}</strong></br>${animal.description}</span>
       <span class="pull-right">
-        <button type="button" class="btn btn-xs btn-warning" onclick="handleEditAnimalClick()" data-animal-id="${animal._id}"><strong>Edit</strong></button>
+        <button type="button" class="btn btn-xs btn-warning" onclick="handleEditAnimalClick(this)" data-animal-id="${animal._id}"><strong>Edit</strong></button>
         <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteAnimalClick(this)" data-animal-id="${animal._id}"><strong>Del</strong></button>
       </span>
     </li>`);
@@ -47,7 +47,12 @@ function submitAnimalForm() {
   console.log("You clicked 'submit'. Congratulations.");
  
   const animalData = {
-    title: $('#animal-title').val(),
+    aniname: $('#animal-name').val(),
+    aniweight: $('#animal-weight').val(),
+    aniheight: $('#animal-height').val(),
+    anilength: $('#animal-length').val(),
+    aniclass: $('#animal-class').val(),
+    sciname: $('#animal-scientific-name').val(),
     description: $('#animal-description').val(),
     _id: $('#animal-id').val(),
   };
@@ -84,27 +89,6 @@ function submitAnimalForm() {
   setForm();
 }
 
-//Set the form
-function setForm(data) {
-  data = data || {};
-
-  const animal = {
-    title: data.title || '',
-    description: data.description || '',
-    _id: data._id || '',
-  };
-
-  $('#animal-title').val(animal.title);
-  $('#animal-description').val(animal.description);
-  $('#animal-id').val(animal._id);
-
-  if (animal._id) {
-    $('#form-label').text("Edit Animal");
-  } else {
-    $('#form-label').text("Add Animal");
-  }
-}
-
 //Edit Animal Handler
 function handleEditAnimalClick(element) {
   const animalId = element.getAttribute('data-animal-id');
@@ -139,4 +123,35 @@ function deleteAnimal(animalId) {
     .catch(err => {
       console.error("I'm not extinct yet!", err);
     });
+}
+
+//Set the form
+function setForm(data) {
+  data = data || {};
+
+  const animal = {
+    aniname: data.aniname || '',
+    aniweight: data.aniweight || '',
+    aniheight: data.aniheight || '',
+    anilength: data.anilength || '',
+    aniclass: data.aniclass || '',
+    sciname: data.sciname || '',
+    description: data.description || '',
+    _id: data._id || '',
+  };
+
+  $('#animal-name').val(animal.aniname);
+  $('#animal-weight').val(animal.aniweight);
+  $('#animal-height').val(animal.aniheight);
+  $('#animal-length').val(animal.anilength);
+  $('#animal-class').val(animal.aniclass);
+  $('#animal-scientific-name').val(animal.sciname);
+  $('#animal-description').val(animal.description);
+  $('#animal-id').val(animal._id);
+
+  if (animal._id) {
+    $('#form-label').text("Edit Animal");
+  } else {
+    $('#form-label').text("Add Animal");
+  }
 }
