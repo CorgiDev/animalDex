@@ -1,8 +1,8 @@
-/********************************
- * Fetches data from the api    *
-********************************/
+/**
+ * Fetches data from the api
+ */
 function getAnimals() {
-    return fetch('/api/animal')
+  return fetch('/api/animal')
     .then(response => response.json())
     .then(animals => {
       console.log("Animals, I got them:", animals);
@@ -11,81 +11,101 @@ function getAnimals() {
     .catch(error => console.error("GETANIMALS:", error));
 }
 
-/********************************
- * Render a list of animals     *
- ********************************/
+/**
+ * Render the list
+ */
 function renderAnimals(animals) {
-    const listAnimals = animals.map(animal => `
+  const listItems = animals.map(animal => `
     <li class="list-group-item">
-      <strong>${animal.animalname}</strong> - ${animal.description}
+      <strong>${animal.aniname}</strong></br>${animal.description}
       <span class="pull-right">
-      <button type="button" class="btn btn-xs btn-default" onclick="handleEditAnimalClick(this)" data-animal-id="${animal._id}">Edit</button>
-    </span>
-  </li>`);
-  const html = `<ul class="list-group">${listAnimals.join('')}</ul>`;
+        <button type="button" class="btn btn-xs btn-warning" onclick="handleEditAnimalClick()" data-animal-id="${animal._id}"><strong>Edit</strong></button>
+        <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteAnimalClick(this)" data-animal-id="${animal._id}"><strong>Del</strong></button>
+      </span>
+    </li>`);
+  const html = `<ul class="list-group">${listItems.join('')}</ul>`;
 
   return html;
 }
 
-/****************************************************
- * Fetch files from the API and render to the page  *
- ****************************************************/
+/**
+ * Fetch animals from the API and render to the page
+ */
 function refreshAnimalList() {
-    getAnimals()
+  getAnimals()
     .then(animals => {
+
       window.animalList = animals;
+
       const html = renderAnimals(animals);
       $('#list-container').html(html);
     });
 }
 
-//Submit Animal Form
+// SUBMIT BUTTON Handler
 function submitAnimalForm() {
-    console.log("You clicked 'submit'. Congratulations.");
+  console.log("You clicked 'submit'. Congratulations.");
+ 
+  const animalData = {
+    title: $('#animal-title').val(),
+    description: $('#animal-description').val(),
+    _id: $('#animal-id').val(),
+  };
 
-    const animalData = {
-        animalname: $('#animal-name').val(),
-        weight: $('#animal-weight').val(),
-        height: $('#animal-height').val(),
-        length: $('#animal-length').val(),
-        class: $('#animal-class').val(),
-        scientificname: $('#animal-scientific-name').val(),
-        description: $('#animal-description').val(),
-      };
-
-      console.log(animalData);
-
-      let method, url;
-      if (animalData._id) {
-        method = 'PUT';
-        url = '/api/animal/' + animalData._id;
-      } else {
-        method = 'POST';
-        url = '/api/animal';
-      }
-
-      fetch(url, {
-        method: 'post',
-        body: JSON.stringify(animalData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        //.then(response => response.json())
-        .then(animal => {
-          console.log("We have posted the data", animal);
-          refreshAnimalList();
-        })
-        .catch(err => {
-          console.error("Well, crud! Things did not go quite right.", err);
-        }) 
-}
-  
-//Cancel Animal Form
-function cancelFileForm() {
-    console.log("Someone should clear the form");
+  let method, url;
+  if (animalData._id) {
+    method = 'PUT';
+    url = '/api/animal/' + animalData._id;
+  } else {
+    method = 'POST';
+    url = '/api/animal';
+  }
+ 
+  fetch(url, {
+    method: method,
+    body: JSON.stringify(animalData),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+    .then(animal => {
+      console.log("we have updated the data", animal);
+      setForm();
+      refreshAnimalList();
+    })
+    .catch(err => {
+      console.error("A terrible thing has happened", err);
+    }) 
 }
 
+ // CANCEL BUTTON Handler
+ function cancelAnimalForm() {
+  setForm();
+}
+
+//Set the form
+function setForm(data) {
+  data = data || {};
+
+  const animal = {
+    title: data.title || '',
+    description: data.description || '',
+    _id: data._id || '',
+  };
+
+  $('#animal-title').val(animal.title);
+  $('#animal-description').val(animal.description);
+  $('#animal-id').val(animal._id);
+
+  if (animal._id) {
+    $('#form-label').text("Edit Animal");
+  } else {
+    $('#form-label').text("Add Animal");
+  }
+}
+
+//Edit Animal Handler
 function handleEditAnimalClick(element) {
   const animalId = element.getAttribute('data-animal-id');
 
@@ -95,33 +115,29 @@ function handleEditAnimalClick(element) {
   }
 }
 
+//Delete Animal Handler
+function handleDeleteAnimalClick(element) {
+  const animalId = element.getAttribute('data-animal-id');
 
-function setForm(data) {
-  data = data || {};
-
-  const animal = {
-    animalname: data.animalname || '',
-    weight: data.weight || '',
-    height: data.height || '',
-    length: data.length || '',
-    class: data.class || '',
-    scientificname: data.scientificname || '',
-    description: data.description || '',
-    _id: data._id || '',
-  };
-
-  $('#animal-name').val(animal.animalname);
-  $('#animal-weight').val(animal.weight);
-  $('#animal-height').val(animal.height);
-  $('#animal-length').val(animal.length);
-  $('#animal-class').val(animal.class);
-  $('#animal-scientific-name').val(animal.scientificname);
-  $('#animal-description').val(animal.description);
-  $('#animal-id').val(animal._id);
-
-  if (animal._id) {
-    $('#form-label').text("Edit Animal");
-  } else {
-    $('#form-label').text("Add Animal");
+if (confirm("Are you sure?")) {
+    deleteAnimal(animalId);
   }
+}
+
+//Delete Animal Function
+function deleteAnimal(animalId) {
+  const url = '/api/animal/' + animalId;
+
+  fetch(url, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then(response => response.json())
+    .then(response => {
+      console.log("EXTINCTION!!!!!");
+      refreshAnimalList();
+    })
+    .catch(err => {
+      console.error("I'm not extinct yet!", err);
+    });
 }

@@ -1,81 +1,86 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <title>AnimalDex Project</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-  </head>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
+    <!-- Sets viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  
   <body>
     <header>
-        <a href="index.html" id="logo"></a>    
-        <nav id="navigation"></nav>
+      <a href="" id="logo"><h1>AnimalDex Project</h1></a>
     </header>
-    
+
     <div class="container">
 
+      <!-- List Here -->
       <div id="list-container"></div>
 
+      <!-- Form Start -->
       <div id="form-container" class="panel">
-          <form id="add-file-form">
-              <legend>Add Animal</legend>
-              
-              <div class="form-group">
-                  <label for="animal-name">Name:</label>
-                  <input type="text" class="form-control" id="animal-name" placeholder="Animal Name">
-              </div>
-              
-              <div class="form-group">
-                  <label for="animal-weight">Weight:</label>
-                  <input type="text" class="form-control" id="animal-weight" placeholder="Weight">
-              </div>
-              
-              <div class="form-group">
-                  <label for="animal-height">Height:</label>
-                  <input type="text" class="form-control" id="animal-height" placeholder="Height">
-              </div>
-              
-              <div class="form-group">
-                  <label for="animal-length">Length:</label>
-                  <input type="text" class="form-control" id="animal-length" placeholder="Length">
-              </div>
-              
-              <div class="form-group">
-                  <label for="animal-class">Scientific Class:</label>
-                  <input type="text" class="form-control" id="animal-class" placeholder="Scientific Class">
-              </div>
-              
-              <div class="form-group">
-                  <label for="animal-scientific-name">Scientific Name:</label>
-                  <input type="text" class="form-control" id="animal-scientific-name" placeholder="Scientific Name">
-              </div>
-              
-              <div class="form-group">
-                  <label for="animal-description">Description:</label>
-                  <input type="text" class="form-control" id="animal-description" placeholder="Description">
-              </div>
-      
-              <button type="button" onclick="submitAnimalForm()" class="btn btn-success">Submit</button>
-              <button type="button" onclick="cancelAnimalForm()" class="btn btn-link">cancel</button>
+          <form id="add-animal-form">
+              <input type="hidden" id="animal-id" value="" />
+            <legend id="form-label">Animal</legend>
+            <!-- Animal Name -->
+            <div class="form-group">
+              <label for="animal-name">Animal Name</label>
+              <input type="text" class="form-control" id="animal-title" placeholder="Animal Name">
+            </div>
+            <!-- Animal Name -->
+            <div class="form-group">
+              <label for="animal-weight">Animal Weight (pounds)</label>
+              <input type="text" class="form-control" id="animal-weight" placeholder="Avg weight in pounds">
+            </div>
+            <!-- Animal Name -->
+            <div class="form-group">
+              <label for="animal-height">Height(inches)</label>
+              <input type="text" class="form-control" id="animal-height" placeholder="Avg height in inches">
+            </div>
+            <!-- Animal Length -->
+            <div class="form-group">
+              <label for="animal-length">Length (inches)</label>
+              <input type="text" class="form-control" id="animal-length" placeholder="Avg length in inches">
+            </div>
+            <!-- Animal Scientific Class -->
+            <div class="form-group">
+              <label for="animal-class">Scientific Class</label>
+              <input type="text" class="form-control" id="animal-class" placeholder="Scientific Class (e.g. Mammalia)">
+            </div>
+            <!-- Animal Scientific Name -->
+            <div class="form-group">
+              <label for="animal-scientific-name">Scientific Name</label>
+              <input type="text" class="form-control" id="animal-scientific-name" placeholder="Scientific Name (e.g. Panthera leo)">
+            </div>
+            <!-- Animal Description -->
+            <div class="form-group">
+              <label for="animal-description">Description</label>
+              <input type="text" class="form-control" id="animal-description" placeholder="A short description">
+            </div>
+            <button type="button" onclick="submitAnimalForm()" class="btn btn-success"><strong>Submit</strong></button>
+            <button type="button" onclick="cancelAnimalForm()" class="btn btn-danger"><strong>Cancel</strong></button>
           </form>
-      </div>
+        </div>
 
     </div>
-    
-    <footer></footer>
+
+    <!-- Linked JavaScript Files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="/js/jquery-3.3.1.min.js"></script> -->
     <script src="/js/app.js"></script>
-    <script src="/js/insert.js"></script>
+
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         refreshAnimalList();
+        setForm();
       });
     </script>
+  
   </body>
 </html>
