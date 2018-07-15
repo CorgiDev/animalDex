@@ -16,7 +16,10 @@
   
   <body>
     <header>
-      <a href="" id="logo"><h1>AnimalDex Project</h1></a>
+      <div class="container branding">
+          <a href="" id="logo"><h1>AnimalDex Project</h1></a>
+          <button id="add-animal-button" class="btn btn-primary" onclick="handleAddAnimalClick()">New Animal Form</button>
+      </div>
     </header>
 
     <div class="container">
@@ -25,7 +28,7 @@
       <div id="list-container"></div>
 
       <!-- Form Start -->
-      <div id="form-container" class="panel">
+      <div id="form-container" class="panel hidden">
           <form id="add-animal-form">
             <input type="hidden" id="animal-id" value="" />
             <legend id="form-label">Animal</legend>
@@ -65,6 +68,7 @@
               <input type="text" class="form-control" id="animal-description" placeholder="A short description">
             </div>
             <button type="button" onclick="submitAnimalForm()" class="btn btn-success"><strong>Submit</strong></button>
+            <button type="button" onclick="clearAnimalForm()" class="btn btn-warning"><strong>Clear</strong></button>
             <button type="button" onclick="cancelAnimalForm()" class="btn btn-danger"><strong>Cancel</strong></button>
           </form>
         </div>

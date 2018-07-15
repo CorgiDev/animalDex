@@ -91,6 +91,14 @@ function submitAnimalForm() {
 **********************************/
  function cancelAnimalForm() {
   setForm();
+  toggleAddAnimalFormVisibility();
+}
+
+/*********************************
+* Clear Button Handler
+**********************************/
+function clearAnimalForm() {
+  setForm();
 }
 
 /*********************************
@@ -101,6 +109,9 @@ function handleEditAnimalClick(element) {
   const animal = window.animalList.find(animal => animal._id === animalId);
   if (animal) {
     setForm(animal)
+    if($('div.hidden').length) {
+      toggleAddAnimalFormVisibility();
+    }
   }
 }
 
@@ -166,4 +177,19 @@ function setForm(data) {
   } else {
     $('#form-label').text("Add Animal");
   }
+}
+
+/*********************
+* Set Form VIsibility
+*********************/
+function handleAddAnimalClick() {
+  setForm({});
+  if($('div.hidden').length) {
+    toggleAddAnimalFormVisibility();
+  }
+  // toggleAddAnimalFormVisibility();
+}
+
+function toggleAddAnimalFormVisibility() {
+  $('#form-container').toggleClass('hidden');
 }

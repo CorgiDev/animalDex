@@ -1,16 +1,16 @@
 /* Style the Header and Nav Area */
 header {
     background-color: maroon;
-    margin-top: 0;
-    padding: 10px 0;
+}
+
+.branding {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #logo {
-    margin: 0 auto;
+    margin: auto auto;
     text-align: center;
 }
 
@@ -50,6 +50,10 @@ a {
 }
 
 .btn-danger {
+    margin-left: 4px;
+}
+
+.btn-warning {
     margin-left: 4px;
 }
 
