@@ -1,6 +1,6 @@
-/**
- * Fetches data from the api
- */
+/*********************************
+* Fetch Animal Data
+**********************************/
 function getAnimals() {
   return fetch('/api/animal')
     .then(response => response.json())
@@ -11,9 +11,9 @@ function getAnimals() {
     .catch(error => console.error("GETANIMALS:", error));
 }
 
-/**
- * Render the list
- */
+/********************
+* Render the list
+********************/
 function renderAnimals(animals) {
   const listItems = animals.map(animal => `
     <li class="list-group-item">
@@ -28,9 +28,9 @@ function renderAnimals(animals) {
   return html;
 }
 
-/**
- * Fetch animals from the API and render to the page
- */
+/*********************************
+* Fetch animals from DB for list
+**********************************/
 function refreshAnimalList() {
   getAnimals()
     .then(animals => {
@@ -42,7 +42,9 @@ function refreshAnimalList() {
     });
 }
 
-// SUBMIT BUTTON Handler
+/*********************************
+* Submit Button Handler
+**********************************/
 function submitAnimalForm() {
   console.log("You clicked 'submit'. Congratulations.");
  
@@ -84,12 +86,16 @@ function submitAnimalForm() {
     }) 
 }
 
- // CANCEL BUTTON Handler
+/*********************************
+* Cancel Button Handler
+**********************************/
  function cancelAnimalForm() {
   setForm();
 }
 
-//Edit Animal Handler
+/*********************************
+* Edit Button Handler
+**********************************/
 function handleEditAnimalClick(element) {
   const animalId = element.getAttribute('data-animal-id');
   const animal = window.animalList.find(animal => animal._id === animalId);
@@ -98,7 +104,9 @@ function handleEditAnimalClick(element) {
   }
 }
 
-//Delete Animal Handler
+/*********************************
+* Delete Button Handler
+**********************************/
 function handleDeleteAnimalClick(element) {
   const animalId = element.getAttribute('data-animal-id');
 
@@ -107,7 +115,9 @@ if (confirm("Are you sure?")) {
   }
 }
 
-//Delete Animal Function
+/*********************************
+* Delete Button Function
+**********************************/
 function deleteAnimal(animalId) {
   const url = '/api/animal/' + animalId;
 
@@ -125,7 +135,9 @@ function deleteAnimal(animalId) {
     });
 }
 
-//Set the form
+/***************************************
+* Set the form based on info passed in
+****************************************/
 function setForm(data) {
   data = data || {};
 
