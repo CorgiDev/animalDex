@@ -28,7 +28,7 @@ In both cases you should get some text displaying a version number.
 8. Using cd commands navigate to the root folder of the program.
 9. Type 'npm install' in your command line program so it will install the dependencies for the program.
 10. Type 'node app' to start the program running. See 'Notes' section if you expreience issues loading the app here.
-11. Navigate to 'localhost:4242' in a browser window. You should now be at the home page of the program. See 'Notes' section if you have issues loading this in Chrome.
+11. Navigate to [http://localhost:4242](http://localhost:4242) in a browser window. You should now be at the home page of the program. See 'Notes' section if you have issues loading this in a particular browser.
 
 ## Built With
 * [JavaScript](https://www.javascript.com/learn/strings) - The programming language meant to be at the focus of this project.
@@ -46,8 +46,8 @@ In both cases you should get some text displaying a version number.
 Instructions for installing Node.js can be found [here for Windows](http://treehouse.github.io/installation-guides/windows/node-windows.html), or [here for Mac](http://treehouse.github.io/installation-guides/mac/node-mac.html).
 ###Install Nodemon
 If you encounter some errors, when you type 'node app' in your command line tool, you may need to type 'npm install nodemon -g' to install Nodemon.
-###Issues with Chrome
-If you go to load the app in Chrome and it refuses to load citing a security issue or protocol issue, try loading it by going to [127.0.0.1:4242](http://127.0.0.1:4242) instead of localhost:4242.
+###Issues with Browsers
+If you go to load the app in Chrome and it refuses to load citing a security issue or protocol issue, try loading it by going to [127.0.0.1:4242](http://127.0.0.1:4242) instead of localhost:4242. In IE, you can load it with localhost:port or the ip:port combination, but you may have to manually type http:// before it before it will load. No issues were experienced with Firefox during testing, but that does not mean they will not introduce something to cause the same issues soon.
 
 ## Authors
 

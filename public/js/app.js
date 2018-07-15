@@ -108,7 +108,6 @@ function setForm(data) {
 //Edit Animal Handler
 function handleEditAnimalClick(element) {
   const animalId = element.getAttribute('data-animal-id');
-
   const animal = window.animalList.find(animal => animal._id === animalId);
   if (animal) {
     setForm(animal)
