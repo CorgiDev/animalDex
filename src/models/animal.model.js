@@ -16,7 +16,7 @@ const AnimalSchema = new mongoose.Schema({
 
 const Animal = mongoose.model('Animal', AnimalSchema);
 
-Animal.count({}, function(err, count) {
+Animal.countDocuments({}, function(err, count) {
   if (err) {
     throw err;
   }

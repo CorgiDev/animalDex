@@ -34,6 +34,15 @@ a {
     margin: 0 auto;
     padding: 0 5%;
 }
+/*Style List*/
+.list-group-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.pull-right {
+    align-self: flex-end;
+}
 
 /* Style Buttons */
 #add-animal-button {
