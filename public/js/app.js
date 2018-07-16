@@ -183,9 +183,11 @@ function setForm(data) {
 * Set Form VIsibility
 *********************/
 function handleAddAnimalClick() {
-  setForm({});
   if($('div.hidden').length) {
+    setForm({});
     toggleAddAnimalFormVisibility();
+  } else if (!$('div.hidden').length) {
+    setForm({});
   }
   // toggleAddAnimalFormVisibility();
 }
