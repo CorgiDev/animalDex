@@ -10,25 +10,21 @@ Update, and Delete information. The information will be persistent through a Mon
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-
-* Visual Studio Community 2017
 * Node.js (Preferably at least 10.5.0)
 * A Command line program like Terminal (Mac) or Command Prompt (Windows)
 * A browser (tested with Google Chrome, IE, Edge and FireFox)
 
 ### Installing
-1. Download the project files.
+1. Clone the project files.
 2. Paste the .env file into the root folder of the project.
-3. Install Visual Studio Community 2017.
-4. Update Visual Studio Community 2017.
-5. Install Node.js if not already installed. See 'Notes' section for install instruction links.
-6. Open a command line program.
-7. Check that Node.js and NPM are installed by typing 'npm -v' and 'node -v' into your command line program. 
+3. Install Node.js if not already installed. See 'Notes' section for install instruction links.
+4. Open a command line program.
+5. Check that Node.js and NPM are installed by typing 'npm -v' and 'node -v' into your command line program. 
 In both cases you should get some text displaying a version number.
-8. Using cd commands navigate to the root folder of the program.
-9. Type 'npm install' in your command line program so it will install the dependencies for the program.
-10. Type 'node app' to start the program running. See 'Notes' section if you expreience issues loading the app here.
-11. Navigate to [http://localhost:4242](http://localhost:4242) in a browser window. You should now be at the home page of the program. See 'Notes' section if you have issues loading this in a particular browser.
+6. Using cd commands navigate to the root folder of the program.
+7. Type 'npm install' in your command line program so it will install the dependencies for the program.
+8. Type 'node app' to start the program running. See 'Notes' section if you expreience issues loading the app here.
+9. Navigate to [http://localhost:4242](http://localhost:4242) in a browser window. You should now be at the home page of the program. See 'Notes' section if you have issues loading this in a particular browser.
 
 ## Built With
 * [JavaScript](https://www.javascript.com/learn/strings) - The programming language meant to be at the focus of this project.
