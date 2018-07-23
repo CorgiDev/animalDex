@@ -17,18 +17,16 @@
   <body>
     <header>
       <div class="container branding">
-        <a href="" id="logo"><h1>AnimalDex Project</h1></a>
+        <a href="http://127.0.0.1:4242" id="logo"><h1>AnimalDex Project</h1></a>
         <button id="add-animal-button" class="btn btn-primary" onclick="handleAddAnimalClick()">New Animal Form</button>
       </div>
     </header>
 
-    <div class="container main-box">
-
-      <!-- List Here -->
-      <div id="list-container"></div>
-
-      <!-- Form Start -->
-      <div id="form-container" class="panel hidden">
+    <div class="container blocky">
+      <div class="row">
+        
+        <!-- Form Start -->
+        <div id="form-container" class="panel hidden col-5">
           <form id="add-animal-form">
             <input type="hidden" id="animal-id" value="" />
             <legend id="form-label">Animal</legend>
@@ -67,11 +65,16 @@
               <label for="animal-description">Description</label>
               <input type="text" class="form-control" id="animal-description" placeholder="A short description">
             </div>
-            <button type="button" onclick="submitAnimalForm()" class="btn btn-success"><strong>Submit</strong></button>
-            <button type="button" onclick="clearAnimalForm()" class="btn btn-warning"><strong>Clear</strong></button>
-            <button type="button" onclick="cancelAnimalForm()" class="btn btn-danger"><strong>Cancel</strong></button>
+            <button type="button" onclick="submitAnimalForm()" class="formbtn btn btn-success"><strong>Submit</strong></button>
+            <button type="button" onclick="clearAnimalForm()" class="formbtn btn btn-warning"><strong>Clear</strong></button>
+            <button type="button" onclick="cancelAnimalForm()" class="formbtn btn btn-danger"><strong>Cancel</strong></button>
           </form>
         </div>
+
+        <!-- List Here -->
+        <div id="list-container" class="col"></div>
+
+      </div>
 
     </div>
 

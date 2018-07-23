@@ -17,13 +17,13 @@ function getAnimals() {
 function renderAnimals(animals) {
   const listItems = animals.map(animal => `
     <li class="list-group-item">
-      <span><strong>${animal.aniname}</strong></br>${animal.description}</span>
+      <span><strong>${animal.aniname}</strong> - <i>${animal.sciname}</i></br>${animal.description}</span>
       <span class="pull-right">
         <button type="button" class="btn btn-xs btn-warning" onclick="handleEditAnimalClick(this)" data-animal-id="${animal._id}"><strong>Edit</strong></button>
         <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteAnimalClick(this)" data-animal-id="${animal._id}"><strong>Del</strong></button>
       </span>
     </li>`);
-  const html = `<ul class="list-group">${listItems.join('')}</ul>`;
+  const html = `<ul class="list-group"><legend class="list-label">Animal List</legend>${listItems.join('')}</ul>`;
 
   return html;
 }

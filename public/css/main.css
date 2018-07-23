@@ -53,6 +53,10 @@ a {
     margin-left: 4px;
 }
 
+.formbtn {
+    margin-bottom: 20px;
+}
+
 .btn-warning {
     margin-left: 4px;
 }
@@ -60,4 +64,8 @@ a {
 /* Style the List */
 #list-container {
     margin: 10px 0;
+}
+
+#form-container {
+    margin-top: 15px;
 }
