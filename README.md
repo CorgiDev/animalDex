@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 * Node.js (Preferably at least 10.5.0)
-* A Command line program like Terminal (Mac) or Command Prompt (Windows)
+* A Command line program like Terminal (Mac) or GitBash (Windows)
 * A browser (tested with Google Chrome, IE, Edge and FireFox)
 
 ### Installing
