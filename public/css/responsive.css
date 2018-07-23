@@ -1,0 +1,23 @@
+@media only screen and (max-width: 499px) {
+    #form-container {
+        float: none;
+        margin: 0 auto;
+        display: block;
+        padding: 0 10px 0 0;
+        border-width: 0 2px 0 0;
+        border-color: gray;
+        max-width: 100%;
+    }
+}
+
+/* Make form beside list when screen large (min screen width) */
+@media only screen and (min-width: 500px) {
+    #form-container {
+        float: left;
+        margin: 0 10px 0 0;
+        padding: 0 10px 0 0;
+        border-width: 0 2px 0 0;
+        border-color: gray;
+        max-width: 50%;
+    }
+}

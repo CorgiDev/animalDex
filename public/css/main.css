@@ -1,4 +1,15 @@
-/* Style the Header and Nav Area */
+/* Style Links */
+a:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Style the Header Area */
 header {
     background-color: maroon;
 }
@@ -18,20 +29,10 @@ header {
     margin-top: 0;
 }
 
-/* Style Links */
-a:hover {
-    text-decoration: none;
-    color: gray;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
+/* Style Container */
 .container {
     max-width: 940px;
-    margin: 0 auto;
+    margin: 15px auto;
     padding: 0 5%;
 }
 /*Style List*/
@@ -44,11 +45,14 @@ a {
     align-self: flex-end;
 }
 
-/* Style Buttons */
+/* Style Add Animal Button */
 #add-animal-button {
     margin-bottom: 12px;
+    max-width: 30%;
+    align-self: center;
 }
 
+/* Format the form elements */
 .btn-danger {
     margin-left: 4px;
 }
@@ -61,11 +65,8 @@ a {
     margin-left: 4px;
 }
 
-/* Style the List */
 #list-container {
-    margin: 10px 0;
-}
-
-#form-container {
-    margin-top: 15px;
+    /* float: left; */
+    max-width: 100%;
+    margin: 0 auto;
 }

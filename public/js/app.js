@@ -17,7 +17,7 @@ function getAnimals() {
 function renderAnimals(animals) {
   const listItems = animals.map(animal => `
     <li class="list-group-item">
-      <span><strong>${animal.aniname}</strong> - <i>${animal.sciname}</i></br>${animal.description}</span>
+      <span><strong>${animal.aniname}</strong> (<i>${animal.sciname}</i>)</br>${animal.description}</span>
       <span class="pull-right">
         <button type="button" class="btn btn-xs btn-warning" onclick="handleEditAnimalClick(this)" data-animal-id="${animal._id}"><strong>Edit</strong></button>
         <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteAnimalClick(this)" data-animal-id="${animal._id}"><strong>Del</strong></button>
