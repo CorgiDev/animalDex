@@ -31,8 +31,7 @@ header {
 
 /* Style Container */
 .container {
-    max-width: 940px;
-    margin: 15px auto;
+    max-width: 90%;
     padding: 0 5%;
 }
 /*Style List*/
@@ -48,8 +47,11 @@ header {
 /* Style Add Animal Button */
 #add-animal-button {
     margin-bottom: 12px;
-    max-width: 30%;
+    max-width: 50%;
     align-self: center;
+    font-size: 1em;
+    white-space: normal;
+    text-align: center;
 }
 
 /* Format the form elements */
@@ -69,4 +71,8 @@ header {
     /* float: left; */
     max-width: 100%;
     margin: 0 auto;
+}
+
+.mainbox {
+    margin: 15px auto;
 }
