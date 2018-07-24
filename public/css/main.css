@@ -76,3 +76,19 @@ header {
 .mainbox {
     margin: 15px auto;
 }
+
+/* Style Footer */
+footer {
+    text-align: center;
+}
+
+/* Style Social Icons */
+.fab {
+    font-size: 2em;
+}
+.fa-github {
+    color: mediumslateblue;
+}
+.fa-linkedin {
+    color: #6699cc;
+}

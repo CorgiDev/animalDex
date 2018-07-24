@@ -6,4 +6,5 @@
 
 $('#branding').html('');
 
-$('#yourDivName').html('yourtHTML');
+$('#socialIcons').html(`
+                        `);
