@@ -1,9 +1,13 @@
+/*Style body - MUST GO AT TOP - Other sections have their own colors */
+body {
+    background-color: black;
+}
+
 /* Style Links */
 a:hover {
     text-decoration: none;
     color: gray;
 }
-
 a {
     text-decoration: none;
     color: white;
@@ -13,38 +17,18 @@ a {
 header {
     background-color: maroon;
 }
-
 .branding {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 #logo {
     margin: auto auto;
     text-align: center;
 }
-
 #brand {
     margin-top: 0;
 }
-
-/* Style Container */
-.container {
-    max-width: 90%;
-    padding: 0 5%;
-}
-/*Style List*/
-.list-group-item {
-    display: flex;
-    flex-direction: column;
-}
-
-.pull-right {
-    align-self: flex-end;
-}
-
-/* Style Add Animal Button */
 #add-animal-button {
     margin-bottom: 12px;
     max-width: 50%;
@@ -54,33 +38,61 @@ header {
     text-align: center;
 }
 
-/* Format the form elements */
-.btn-danger {
-    margin-left: 4px;
+/* Styles affecting the side panels */
+/* #sidePanels {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+} */
+
+/* Styles affecting the main content area */
+.mainbox {
+    margin: 0 auto;
+    background-color: white;
+    height: 100%;
 }
 
-.formbtn {
-    margin-bottom: 20px;
+/* Style Container */
+.container {
+    max-width: 90%;
+    padding: 0 5%;
 }
 
-.btn-warning {
-    margin-left: 4px;
+/*Style the legends @ top of list and form */
+legend{
+    margin-top: 15px;
 }
 
+/*Style List*/
+.list-group-item {
+    display: flex;
+    flex-direction: column;
+}
+.pull-right {
+    align-self: flex-end;
+}
 #list-container {
-    /* float: left; */
     max-width: 100%;
     margin: 0 auto;
 }
 
-.mainbox {
-    margin: 15px auto;
-    border-bottom: 2px solid lightgrey;
+/* Format the form elements */
+.btn-danger {
+    margin-left: 4px;
+}
+.formbtn {
+    margin-bottom: 20px;
+}
+.btn-warning {
+    margin-left: 4px;
 }
 
 /* Style Footer */
 footer {
     text-align: center;
+    border-top: 2px solid lightgrey;
+    clear: both;
+    padding-top: 9px;
 }
 
 /* Style Social Icons */
