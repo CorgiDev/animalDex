@@ -86,13 +86,18 @@ legend{
 .btn-warning {
     margin-left: 4px;
 }
+input:focus {
+    /* outline: none !important; */
+    border:1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
 
 /* Style Footer */
 footer {
     text-align: center;
     border-top: 2px solid lightgrey;
     clear: both;
-    padding-top: 9px;
+    padding: 9px 0;
 }
 
 /* Style Social Icons */
