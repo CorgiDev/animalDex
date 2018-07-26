@@ -10,6 +10,7 @@ Update, and Delete information. The information will be persistent through a Mon
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
+
 * Node.js (Preferably at least 10.5.0)
 * A Command line program like Terminal (Mac) or GitBash (Windows)
 * A browser (tested with Google Chrome, IE, Edge and FireFox)
@@ -27,6 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 9. Navigate to [http://localhost:4242](http://localhost:4242) in a browser window. You should now be at the home page of the program. See 'Notes' section if you have issues loading this in a particular browser.
 
 ## Built With
+
 * [JavaScript](https://www.javascript.com/learn/strings) - The programming language meant to be at the focus of this project.
 * [Node.js](https://nodejs.org/en/) - A JavaScript runtime that helps execute JavaScript code server side.
 * [jQuery](http://jquery.com) - A JavaScript library that helps with visual features and document transversal.
@@ -35,17 +37,22 @@ These instructions will get you a copy of the project up and running on your loc
 * [Nodemon](https://nodemon.io) - Monitors changes in the program and reloads it so you don't have to after every change.
 
 ## Notes
+
 ### Installing Node.js
+
 Instructions for installing Node.js can be found [here for Windows](http://treehouse.github.io/installation-guides/windows/node-windows.html), or [here for Mac](http://treehouse.github.io/installation-guides/mac/node-mac.html).
+
 ###Install Nodemon
+
 If you encounter some errors, when you type 'node src/server.js' or 'npm start' in your command line tool, you may need to type 'npm install nodemon -g' to install Nodemon. Since this was added to the dependencies, it should install when you type 'npm install', but there is always a chance it won't.
+
 ###Issues with Browsers
+
 If you go to load the app in Chrome and it refuses to load citing a security issue or protocol issue, try loading it by going to [127.0.0.1:4242](http://127.0.0.1:4242) instead of localhost:4242. In IE, you can load it with localhost:port or the ip:port combination, but you may have to manually type http:// before it before it will load. No issues were experienced with Firefox during testing, but that does not mean they will not introduce something to cause the same issues soon.
 
 ## Authors
 
-* **[EGrayTech](https://github.com/EGrayTech)** - *Initial work*
+**[EGrayTech](https://github.com/EGrayTech)** - *Initial work*
 
 ## Acknowledgments
-
-* Project inspiration from the May 2018 Session FSJS Thursday class project and the Pokedex featured in Gamefreak's Pokemon franchise.
+Project inspiration from the May 2018 Session FSJS Thursday class project and the Pokedex featured in Gamefreak's Pokemon franchise.
